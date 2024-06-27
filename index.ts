@@ -62,7 +62,7 @@ allPhpFiles.forEach((file) => {
     if (ns) {
       namespace = line.replace("namespace", "").trim().replace(";", "");
     }
-    const classMatch = line.match(/^\s*class\s+(\w*)/);
+    const classMatch = line.match(/^\s*(?:abstract\s+)?class\s+(\w*)/);
     if (classMatch) {
       const className = classMatch[1];
       const fullClassName = `${namespace}\\${className}`;
